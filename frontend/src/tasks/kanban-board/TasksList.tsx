@@ -14,7 +14,7 @@ const TasksList: React.FC = () => {
   const updateStatus = async (status: string, id: string, time: number = 0) => {
     try {
       const responseData = await sendRequest(
-        `${process.env.BACKEND_URI}/tasks`,
+        `${process.env.REACT_APP_BACKEND_URI}/tasks`,
         "PUT",
         {
           Authorization: `Bearer ${auth.user.token}`,
@@ -29,7 +29,7 @@ const TasksList: React.FC = () => {
   const sendTask = async (task: { status: string; text: string }) => {
     try {
       const responseData = await sendRequest(
-        `${process.env.BACKEND_URI}/tasks`,
+        `${process.env.REACT_APP_BACKEND_URI}/tasks`,
         "POST",
         {
           Authorization: `Bearer ${auth.user.token}`,
@@ -45,7 +45,7 @@ const TasksList: React.FC = () => {
     const fetchTasks = async () => {
       try {
         const responseData = await sendRequest(
-          `${process.env.BACKEND_URI}/tasks`,
+          `${process.env.REACT_APP_BACKEND_URI}/tasks`,
           "GET",
           { Authorization: `Bearer ${auth.user.token}` }
         );

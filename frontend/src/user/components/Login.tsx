@@ -14,7 +14,7 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const responseData = await sendRequest(
-        `${process.env.BACKEND_URI}/user/login`,
+        `${process.env.REACT_APP_BACKEND_URI}/user/login`,
         "POST",
         {
           "Content-Type": "application/json",

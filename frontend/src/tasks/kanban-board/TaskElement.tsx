@@ -51,9 +51,14 @@ const TaskElement: React.FC<ElementProps> = ({
           <span onClick={handleStart}> ${cost.toFixed(2)}</span>
         )}
         {status === "progress" && (
-          <span onClick={handleStart}>{formatTime(timer)}</span>
+          <>
+            <span onClick={handleStart}>{formatTime(timer)}</span>
+            <span onClick={updateHandler}>{spanValue(status)}</span>
+          </>
         )}
-        <span onClick={updateHandler}>{spanValue(status)}</span>
+        {status === "todo" && (
+          <span onClick={updateHandler}>{spanValue(status)}</span>
+        )}
       </div>
     </ElementContainer>
   );

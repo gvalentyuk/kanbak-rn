@@ -15,7 +15,7 @@ const Register: React.FC = () => {
     e.preventDefault();
     try {
       const responseData = await sendRequest(
-        `${process.env.BACKEND_URI}/user/registration`,
+        `${process.env.REACT_APP_BACKEND_URI}/user/registration`,
         "POST",
         {
           "Content-Type": "application/json",
